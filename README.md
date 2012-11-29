@@ -1,7 +1,7 @@
 jquery.cssQueue
 ===============
 
-A plugin to handle adding, removing css classes with transitions attached to them. 
+A plugin to handle chain adding, removing css classes with transitions attached to them without worrying about timeouts or events!
 
 This plugin is intended to use in conjunction of CSS transition classes, keeping all the CSS stuff in the CSS files and relaying on jQuery only to add or remove class names. 
 
