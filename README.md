@@ -20,11 +20,14 @@ $(item).cssQueue(cssQueueArr)
 
 ## Array
 The parameter needs to be an Array with one or more objects using the following properties
-	addClassName		name of the class or classes that will be added 
-	removeClassName		name of the class or classes that will be removed
-	transition  		if set to true, the plugin will wait to the transition to finish before continuing
-	callBack			function to be called after the actual step is applied
 
+```
+	addClassName:		name of the class or classes that will be added 
+	removeClassName:	name of the class or classes that will be removed
+	transition: 		if set to true, the plugin will wait to the transition to finish before continuing (default false)
+	callBack:			function to be called after the actual step is applied
+```
+#### Example
 
 ### 
 ``` javascript
