@@ -5,16 +5,11 @@
     this.each(function() {
       var $el, copiedQueue, processQueue;
       $el = $(this);
-      copiedQueue = _.clone(queue);
+      copiedQueue = queue.slice();
       processQueue = function() {
-        var actualStep, tryToCallBack, updateElement;
+        var actualStep, updateElement;
         actualStep = copiedQueue.shift();
         if (actualStep != null) {
-          tryToCallBack = function() {
-            if (actualStep.callBack != null) {
-              return actualStep.callBack();
-            }
-          };
           updateElement = function() {
             if (actualStep.addClassName != null) {
               $el.addClass(actualStep.addClassName);
@@ -25,14 +20,10 @@
             if (copiedQueue.length !== 0) {
               if (actualStep.transition === true) {
                 $el.one("webkitTransitionEnd transitionend oTransitionEnd", function() {
-                  if (copiedQueue.length !== 0) {
-                    return processQueue();
-                  }
+                  return setTimeout(processQueue, 0);
                 });
               } else {
-                if (copiedQueue.length !== 0) {
-                  setTimeout(processQueue, 0);
-                }
+                setTimeout(processQueue, 0);
               }
             }
             if (actualStep.callBack != null) {
