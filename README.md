@@ -28,16 +28,16 @@ The problem is when you have to chain some CSS transitions, for example, when th
 *script.js*
 ``` javascript 
 	cssQueueArr = [
-		{	addClassName: "closed" }, 		// this is added without any transition
-		{	addClassName: "transition" }, 	// we add transition after this point 
+		{	addClassName: "closed" }, 		// Hiding element inmediately
+		{	addClassName: "transition" }, 	// Adding a class with transition to it 
 		{
-			delay: 500						// the plugin will wait 500ms before executing this step
-			removeClassName: "closed",		// removing CSS
-			addClassName: "open",			// adding this CSS, using tranistion
+			delay: 500						// Waiting 500ms before modifing classes
+			removeClassName: "closed",		// removing class
+			addClassName: "open",			// adding this CSS, this should be animated
 			waitForTransition: true			// this will tell the plugin to wait to finish the transition
 											//  before continuing to next Array element
 		}, 
-		{	removeClassName: "transition" } // removing transition
+		{	removeClassName: "transition" } // removing the class with the transition
 	]
 
 	$(".item").cssQueue(cssQueueArr)
