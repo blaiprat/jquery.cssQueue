@@ -10,7 +10,22 @@ Example
 
 The problem is when you have to chain some CSS transitions, for example, when the page loads we set a menu elements to a ```"closed"``` class that hides them, then we add a ```"transition"``` class that has ```transition: all 1s ease-in-out``` and remove "closed" and add "open". We build an array with different objects defining what is added, what is removed, if is there any transition or if we have to delay execution. Each step is executed after a setTimeout(0) or after finishing a transition. This way CSS transitions can be added without overlaping other classes that are intended to be added or removed instantly previously
 
-We do: 
+##### Example:
+*style.css*
+``` css
+.closed { 
+	opacity: 0;
+	transform: scale(0);
+}
+.open { 
+	opacity: 1;
+	transform: scale(1);
+}
+.transition { 
+	tranision: all 0.5s ease-in-out;
+}
+```
+*script.js*
 ``` javascript 
 	cssQueueArr = [
 		{	addClassName: "closed" }, 		// this is added without any transition
@@ -25,13 +40,11 @@ We do:
 		{	removeClassName: "transition" } // removing transition
 	]
 
-	$(item).cssQueue(cssQueueArr)
+	$(".item").cssQueue(cssQueueArr)
 ```
 
 
-## dependencies
 
-Modernizr csstransition
 
 
 Usage
