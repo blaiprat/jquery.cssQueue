@@ -18,7 +18,7 @@
               $el.removeClass(actualStep.removeClassName);
             }
             if (copiedQueue.length !== 0) {
-              if (actualStep.transition === true) {
+              if (actualStep.waitForTransition === true) {
                 $el.one("webkitTransitionEnd transitionend oTransitionEnd", function() {
                   return setTimeout(processQueue, 0);
                 });

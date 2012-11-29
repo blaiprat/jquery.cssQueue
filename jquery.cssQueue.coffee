@@ -18,9 +18,8 @@
                             $el.removeClass(actualStep.removeClassName)
 
                         # calling the method again
-                        # TODO: try to automate checking if element has transition-duration
                         if copiedQueue.length != 0
-                            if actualStep.transition is true    
+                            if actualStep.waitForTransition is true    
                                 $el.one "webkitTransitionEnd transitionend oTransitionEnd", ->
                                     # we continue after a browser refresh
                                     # to prevent transitions firing when we don't want

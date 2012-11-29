@@ -16,13 +16,11 @@ We do:
 		{	addClassName: "closed" }, 		// this is added without any transition
 		{	addClassName: "transition" }, 	// we add transition after this point 
 		{
-			delay: 500						// the plugin will wait 500ms before executing 
-											//  this step
+			delay: 500						// the plugin will wait 500ms before executing this step
 			removeClassName: "closed",		// removing CSS
 			addClassName: "open",			// adding this CSS, using tranistion
-			transition: true				// this will tell the plugin to wait to finish 
-											// the transition before continuing to 
-											// next Array element
+			waitForTransition: true			// this will tell the plugin to wait to finish the transition
+											//  before continuing to next Array element
 		}, 
 		{	removeClassName: "transition" } // removing transition
 	]
