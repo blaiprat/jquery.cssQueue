@@ -62,7 +62,7 @@ The parameter needs to be an Array with one or more objects using the following 
 	delay:				"int" the executing of this step (in ms), defalut to 0
 	addClassName:		"String" name of the class or classes that will be added 
 	removeClassName:	"String" name of the class or classes that will be removed
-	transition: 		"bool" if set to true, the plugin will wait to the transition 
+	waitForTransition: 	"bool" if set to true, the plugin will wait to the transition 
 						to finish before continuing (default false)
 	callBack:			"function" function to be called after the actual step is applied
 ```
