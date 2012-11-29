@@ -2,7 +2,7 @@
 
 (function($) {
   return $.fn.cssQueue = function(queue) {
-    return this.each(function() {
+    this.each(function() {
       var $el, copiedQueue, processQueue;
       $el = $(this);
       copiedQueue = _.clone(queue);
@@ -46,7 +46,9 @@
           }
         }
       };
-      return processQueue();
+      processQueue();
+      return this;
     });
+    return this;
   };
 })(jQuery);

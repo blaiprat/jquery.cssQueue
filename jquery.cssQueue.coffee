@@ -35,5 +35,7 @@
                         updateElement()
 
             processQueue()
+            this
+        this
     
 ) jQuery
