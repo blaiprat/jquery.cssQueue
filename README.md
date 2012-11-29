@@ -22,7 +22,7 @@ The problem is when you have to chain some CSS transitions, for example, when th
 	transform: scale(1);
 }
 .transition { 
-	tranision: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 ```
 *script.js*
