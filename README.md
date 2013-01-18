@@ -36,6 +36,9 @@ The problem is when you have to chain some CSS transitions, for example, when th
 			addClassName: "open",			// adding this CSS, this should be animated
 			waitForTransition: true			// this will tell the plugin to wait to finish the transition
 											//  before continuing to next Array element
+			callBack: function(){
+				alert("Transitions done!");
+			}
 		}, 
 		{	removeClassName: "transition" } // removing the class with the transition
 	]
@@ -64,6 +67,8 @@ The parameter needs to be an Array with one or more objects using the following 
 	removeClassName:	"String" name of the class or classes that will be removed
 	waitForTransition: 	"bool" if set to true, the plugin will wait to the transition 
 						to finish before continuing (default false)
+						
+	
 	callBack:			"function" function to be called after the actual step is applied
 ```
 
